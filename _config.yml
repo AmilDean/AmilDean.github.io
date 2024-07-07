@@ -1,3 +1,5 @@
 theme: jekyll-theme-merlot
-title: Your Site Title Test
+title: Your Site Title
 description: A description for your site
+url: "https://liyue.dev"
+baseurl: ""
