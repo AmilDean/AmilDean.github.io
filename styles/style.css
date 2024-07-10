@@ -20,33 +20,36 @@ main {
 }
 
 .anime-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin: 1em;
-    padding: 1em;
-    width: 225px;
-    height: 390px;
+    width: 300px; /* Adjust width as needed */
+    height: auto; /* Allow height to adjust based on content */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    vertical-align: top;
     text-align: center;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Center horizontally */
+    position: relative; /* Ensure position relative for absolute positioning */
 }
 
-.anime-card img {
-    width: 205px;
-    height: 287px;
-    object-fit: cover; /* Ensures the image fills the space without stretching */
-    border-bottom: 1px solid #ddd;
+.anime-title {
+    font-size: 16px; /* Adjust font size */
+    margin-bottom: 10px;
+    overflow: visible; /* Allow overflow to display */
+    white-space: normal; /* Ensure text wraps */
+    position: absolute;
+    bottom: 10px; /* Position at the bottom */
+    left: 0;
+    right: 0;
+    padding: 0 10px; /* Padding for readability */
+    background-color: rgba(255, 255, 255, 0.9); /* Background for readability */
 }
 
-.anime-card h2 {
-    width: 205px;
-    height: 41px;
-    margin-top: 0.5em; /* Adjust as needed */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.anime-description {
+    font-size: 14px; /* Smaller font size for description */
+    display: none; /* Initially hide description */
+}
+
+.anime-card:hover .anime-description {
+    display: block; /* Show description on hover */
 }
