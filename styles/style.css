@@ -25,12 +25,24 @@ main {
     border-radius: 4px;
     margin: 1em;
     padding: 1em;
-    width: 200px;
+    width: 225px; /* Set width of the anime card */
+    height: 390px; /* Adjust height to accommodate image and text */
     text-align: center;
+    box-sizing: border-box; /* Include padding and border in the total width */
 }
 
 .anime-card img {
-    max-width: 100%;
+    max-width: 205px; /* Set maximum width of the image */
+    height: 287px; /* Set height of the image */
     border-bottom: 1px solid #ddd;
     margin-bottom: 0.5em;
+}
+
+.anime-card h2 {
+    width: 205px; /* Set width of the text below */
+    height: 41px; /* Set height of the text */
+    margin: 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds ellipsis if text overflows */
+    white-space: nowrap; /* Prevents text from wrapping */
 }
