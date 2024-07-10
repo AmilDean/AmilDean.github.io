@@ -9,6 +9,32 @@ header {
     background-color: #002618;
     color: white; /* White text for contrast */
     padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation {
+    display: flex;
+    gap: 1em;
+}
+
+.navigation a {
+    color: #D3D3D3; /* Light grey text color */
+    text-decoration: none;
+    padding: 0.5em 1em;
+    background-color: #002618; /* Match background color */
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navigation a:hover {
+    background-color: #B0B0B0; /* Slightly darker grey on hover */
+}
+
+h1 {
+    margin: 0;
+    flex-grow: 1;
     text-align: center;
 }
 
