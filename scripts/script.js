@@ -808,3 +808,8 @@ if (document.body.classList.contains('index-page')) {
         container.appendChild(animeCard);
     });
 }
+<script>
+if (window.location.pathname === '/index.html') {
+    window.location.replace('/anime'); // Redirect to /anime
+}
+</script>
