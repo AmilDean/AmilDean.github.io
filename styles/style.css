@@ -51,5 +51,7 @@ main {
     text-overflow: ellipsis; /* Adds ellipsis if text overflows */
 	word-wrap: break-word;
     white-space: normal; /* Prevents text from wrapping */
-	font-size: 8px;
+	font-size: 12px;
+	line-height: 1.2em;
+	overflow: hidden;
 }
