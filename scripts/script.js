@@ -1,5 +1,5 @@
 // Check if the current page is index.html before adding anime cards
-if (document.querySelector('body').classList.contains('index-page')) {
+if (document.body.classList.contains('index-page')) {
     const animeList = [
         "Fairy Tail",
         "Naruto",
