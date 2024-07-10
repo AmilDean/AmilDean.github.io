@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Japanese Study</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script>
+        if (location.pathname.endsWith('/japanese.html')) {
+            location.replace('/japanese');
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -12,10 +17,10 @@
             <a href="index.html">Anime</a>
             <a href="japanese.html">Japanese</a>
         </div>
-        <h1>Japanese Study</h1> <!-- Move this line below the navigation links -->
     </header>
     <main>
-        <!-- This page is intentionally left blank -->
+        <h1>Japanese Study</h1> <!-- Moved below the navigation links -->
+        <!-- Content related to Japanese study will be added here -->
     </main>
     <script src="scripts/script.js"></script>
 </body>
