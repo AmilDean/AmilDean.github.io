@@ -29,6 +29,10 @@ main {
     height: 390px; /* Adjust height to accommodate image and text */
     text-align: center;
     box-sizing: border-box; /* Include padding and border in the total width */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .anime-card img {
