@@ -11,19 +11,20 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center; /* Center horizontally */
 }
 
 .anime-card img {
-    max-width: 205px;
+    width: 205px;
     height: 287px;
+    object-fit: cover; /* Ensures the image fills the space without stretching */
     border-bottom: 1px solid #ddd;
-    margin: 0 auto; /* Center the image horizontally */
 }
 
 .anime-card h2 {
     width: 205px;
     height: 41px;
-    margin: 0 auto; /* Center the text horizontally */
+    margin-top: 0.5em; /* Adjust as needed */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

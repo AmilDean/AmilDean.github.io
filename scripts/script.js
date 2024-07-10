@@ -5,7 +5,7 @@ if (document.body.classList.contains('index-page')) {
         "Naruto",
         "Boruto",
         "One Piece",
-        "DragonBall",
+        "Dragon Ball",
         "Gintama",
         // Add the rest of your anime here...
     ];
