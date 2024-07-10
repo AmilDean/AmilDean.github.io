@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #002618;
     color: white; /* White text for contrast */
     padding: 1em;
     text-align: center;
@@ -20,7 +20,7 @@ main {
 }
 
 .anime-card {
-    background-color: white;
+    background-color: #002618;
     border: 1px solid #ddd;
     border-radius: 4px;
     margin: 1em;
