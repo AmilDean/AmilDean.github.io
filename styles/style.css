@@ -1,48 +1,30 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
-    color:  ;
-    padding: 1em;
-    text-align: center;
-}
-
-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1em;
-}
-
 .anime-card {
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 4px;
     margin: 1em;
     padding: 1em;
-    width: 225px; /* Set width of the anime card */
-    height: 390px; /* Adjust height to accommodate image and text */
+    width: 225px;
+    height: 390px;
     text-align: center;
-    box-sizing: border-box; /* Include padding and border in the total width */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .anime-card img {
-    max-width: 205px; /* Set maximum width of the image */
-    height: 287px; /* Set height of the image */
+    max-width: 205px;
+    height: 287px;
     border-bottom: 1px solid #ddd;
-    margin-bottom: 0.5em;
+    margin: 0 auto; /* Center the image horizontally */
 }
 
 .anime-card h2 {
-    width: 205px; /* Set width of the text below */
-    height: 41px; /* Set height of the text */
-    margin: 0 auto;
+    width: 205px;
+    height: 41px;
+    margin: 0 auto; /* Center the text horizontally */
     overflow: hidden;
-    text-overflow: ellipsis; /* Adds ellipsis if text overflows */
-    white-space: nowrap; /* Prevents text from wrapping */
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
