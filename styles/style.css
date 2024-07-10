@@ -25,6 +25,10 @@ main {
     border-radius: 4px;
     margin: 1em;
     padding: 1em;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word; /* Allow long words to wrap */
+    white-space: normal; /* Allow text to wrap within the container */
     width: 225px; /* Set width of the anime card */
     height: 390px; /* Adjust height to accommodate image and text */
     text-align: center;
