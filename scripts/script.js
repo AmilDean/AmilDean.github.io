@@ -3,7 +3,7 @@ if (document.body.classList.contains('index-page')) {
     const animeList = [
 		"Fairy Tail",
 		"Naruto",
-		"Naruto Shippuden"
+		"Naruto Shippuden",
 		"Boruto",
 		"One Piece",
 		"Dragon Ball",
