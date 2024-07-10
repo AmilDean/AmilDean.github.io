@@ -7,12 +7,14 @@ body {
 
 header {
     background-color: #002618;
-    color: white; /* White text for contrast */
+    color: white;
     padding: 1em;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between; /* Adjusted to evenly space items */
+    width: 100%; /* Ensure full width */
 }
+
 
 .navigation {
     display: flex;
