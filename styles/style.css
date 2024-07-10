@@ -42,7 +42,6 @@ main {
     width: 205px; /* Set width of the text below */
     height: 41px; /* Set height of the text */
     margin: 0 auto;
-    overflow: hidden;
     text-overflow: ellipsis; /* Adds ellipsis if text overflows */
 	word-wrap: break-word;
     white-space: normal; /* Prevents text from wrapping */
