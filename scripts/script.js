@@ -4,6 +4,7 @@ const animeList = [
   "Boruto",
   "One Pieces",
   "Dragon-Ball",
+  "Gintama",
   // Add the rest of your anime here...
 ];
 
