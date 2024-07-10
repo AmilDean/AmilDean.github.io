@@ -34,6 +34,7 @@ main {
 .anime-card img {
     max-width: 205px; /* Set maximum width of the image */
     height: 287px; /* Set height of the image */
+	object-fit: cover;
     border-bottom: 1px solid #ddd;
     margin-bottom: 0.5em;
 }
