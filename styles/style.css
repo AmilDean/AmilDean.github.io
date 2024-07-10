@@ -46,6 +46,7 @@ main {
 .anime-card h2 {
     width: 205px; /* Set width of the text below */
     height: 41px; /* Set height of the text */
+	color: #D3D3D3;
     margin: 0 auto;
     text-overflow: ellipsis; /* Adds ellipsis if text overflows */
 	word-wrap: break-word;
