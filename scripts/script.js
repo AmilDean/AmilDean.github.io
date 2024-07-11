@@ -792,19 +792,21 @@ if (document.body.classList.contains('index-page')) {
 
     const container = document.querySelector('main');
 
-    animeList.forEach(anime => {
-        const animeCard = document.createElement('div');
-        animeCard.classList.add('anime-card');
+	animeList.forEach(anime => {
+		const animeCard = document.createElement('div');
+		animeCard.classList.add('anime-card');
 
-        const animeImage = document.createElement('img');
-        animeImage.src = `images/${anime.replace(/\s+/g, '-').toLowerCase()}.jpg`;
-        animeImage.alt = anime;
+		const animeImage = document.createElement('img');
+		const formattedAnime = anime.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('-');
+		animeImage.src = `images/${formattedAnime}.jpg`;
+		animeImage.alt = anime;
 
-        const animeTitle = document.createElement('h2');
-        animeTitle.textContent = anime;
+		const animeTitle = document.createElement('h2');
+		animeTitle.textContent = anime;
 
-        animeCard.appendChild(animeImage);
-        animeCard.appendChild(animeTitle);
-        container.appendChild(animeCard);
-    });
+		animeCard.appendChild(animeImage);
+		animeCard.appendChild(animeTitle);
+		container.appendChild(animeCard);
+	});
+
 }
