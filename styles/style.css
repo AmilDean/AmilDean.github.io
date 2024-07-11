@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #277264; 
-
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 header {
@@ -14,8 +14,8 @@ header {
     align-items: center;
     justify-content: space-between; /* Adjusted to evenly space items */
     width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
-
 
 .navigation {
     display: flex;
@@ -46,6 +46,7 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     padding: 1em;
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
 
 .anime-card {
@@ -58,16 +59,16 @@ main {
     height: 390px; /* Adjust height to accommodate image and text */
     text-align: center;
     box-sizing: border-box; /* Include padding and border in the total width */
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .anime-card img {
     max-width: 205px; /* Set maximum width of the image */
     height: 287px; /* Set height of the image */
-	object-fit: cover;
+    object-fit: cover;
     border-bottom: 1px solid #ddd;
     margin-bottom: 0.5em;
 }
@@ -75,12 +76,12 @@ main {
 .anime-card h2 {
     width: 205px; /* Set width of the text below */
     height: 41px; /* Set height of the text */
-	color: #D3D3D3;
+    color: #D3D3D3;
     margin: 0 auto;
     text-overflow: ellipsis; /* Adds ellipsis if text overflows */
-	word-wrap: break-word;
+    word-wrap: break-word;
     white-space: normal; /* Prevents text from wrapping */
-	font-size: 12px;
-	line-height: 1.2em;
-	overflow: hidden;
+    font-size: 12px;
+    line-height: 1.2em;
+    overflow: hidden;
 }
