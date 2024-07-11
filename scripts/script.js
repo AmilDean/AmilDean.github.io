@@ -803,9 +803,14 @@ animeList.forEach(anime => {
         return title.replace(/[^\w\s-]/g, '').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(separator);
     };
 
+    // Function to format anime titles with mixed case
+    const formatMixedTitle = (title, separator = '-') => {
+        return title.replace(/[^\w\s-]/g, '').split(' ').map((word, index) => index % 2 === 0 ? word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() : word.toLowerCase()).join(separator);
+    };
+
     const formattedAnime = formatTitle(anime);
-    const lowerCaseAnime = formatTitle(anime).toLowerCase();
-    const mixedCaseAnime = anime.replace(/[^\w\s-]/g, '').split(' ').map((word, index) => index % 2 === 0 ? word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() : word.toLowerCase()).join('-');
+    const lowerCaseAnime = formattedAnime.toLowerCase();
+    const mixedCaseAnime = formatMixedTitle(anime);
 
     animeImage.src = `images/${formattedAnime}.jpg`;
     animeImage.alt = anime;
@@ -831,5 +836,6 @@ animeList.forEach(anime => {
     animeCard.appendChild(animeTitle);
     container.appendChild(animeCard);
 });
+
 
 }
