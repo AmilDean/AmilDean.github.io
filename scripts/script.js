@@ -709,7 +709,7 @@ if (document.body.classList.contains('index-page')) {
 		"My Happy Marriage",
 		"Sweet Reincarnation",
 		"Haitai Nanafa",
-		"WorldEnd (SukaSuka)",
+		"WorldEnd",
 		"Ouran High School Host Club",
 		"Suzume’s Door Locking",
 		"How a Realist Hero Rebuilt the Kingdom",
@@ -799,17 +799,17 @@ if (document.body.classList.contains('index-page')) {
         const animeImage = document.createElement('img');
         const formattedAnime = formatTitle(anime);
 
-        animeImage.src = `images/${formattedAnime}.jpg`;
-        animeImage.alt = anime; // Set alt attribute for accessibility
-
-        animeImage.onerror = () => {
-            if (!triedLowerCase) {
-                animeImage.src = `images/${formattedAnime}.jpg`; // Attempt lowercase and no spaces version
-                triedLowerCase = true;
+        // Check if the image file exists before setting src
+        const imageSrc = `images/${formattedAnime}.jpg`;
+        imageExists(imageSrc, function(exists) {
+            if (exists) {
+                animeImage.src = imageSrc;
             } else {
-                animeImage.src = 'images/default.jpg'; // Fallback image if all attempts fail
+                animeImage.src = 'images/default.jpg'; // Fallback image for specific anime
             }
-        };
+        });
+
+        animeImage.alt = anime; // Set alt attribute for accessibility
 
         const animeTitle = document.createElement('h2');
         animeTitle.textContent = anime;
@@ -820,7 +820,19 @@ if (document.body.classList.contains('index-page')) {
     });
 }
 
+// Function to check if an image exists at a given URL
+function imageExists(url, callback) {
+    const img = new Image();
+    img.onload = function() {
+        callback(true);
+    };
+    img.onerror = function() {
+        callback(false);
+    };
+    img.src = url;
+}
+
 // Function to format anime titles
 function formatTitle(title) {
-    return title.replace(/[^\w\s-]/g, '').toLowerCase().replace(/\s+/g, '');
+    return title.replace(/[^\w\s-]/g, '').toLowerCase().replace(/[\s-]+/g, '');
 }
