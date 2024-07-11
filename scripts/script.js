@@ -791,14 +791,22 @@ if (document.body.classList.contains('index-page')) {
     ];
 
  const container = document.querySelector('main');
+ 
 animeList.forEach(anime => {
     const animeCard = document.createElement('div');
     animeCard.classList.add('anime-card');
 
     const animeImage = document.createElement('img');
     const formattedAnime = anime.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('-');
+    const lowerCaseAnime = anime.replace(/\s+/g, '-').toLowerCase();
+
     animeImage.src = `images/${formattedAnime}.jpg`;
     animeImage.alt = anime;
+
+    animeImage.onerror = () => {
+        // If the first attempt fails, try the lowercase version
+        animeImage.src = `images/${lowerCaseAnime}.jpg`;
+    };
 
     const animeTitle = document.createElement('h2');
     animeTitle.textContent = anime;
