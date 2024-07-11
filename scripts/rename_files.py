@@ -18,6 +18,12 @@ def rename_files(directory):
                 # Replace spaces and special characters with underscores in the base filename
                 new_base = re.sub(r'[^\w\s]', '', new_base).strip().replace(' ', '_')
                 
+                # Convert base filename to lowercase
+                new_base = new_base.lower()
+                
+                # Add a dash at the end of the filename
+                new_base = f"{new_base}-"
+                
                 # Combine the new base filename with the original extension
                 new_filename = f"{new_base}{ext}"
                 
@@ -32,5 +38,5 @@ def rename_files(directory):
     except Exception as e:
         print(f'Error listing directory {directory}: {str(e)}')
 
-# Call the function to rename and remove hyphens from files in the specified directory
+# Call the function to rename, remove hyphens, convert filenames to lowercase, and add a dash
 rename_files(directory)
