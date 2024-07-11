@@ -791,23 +791,14 @@ if (document.body.classList.contains('index-page')) {
     ];
 
  const container = document.querySelector('main');
-
 animeList.forEach(anime => {
     const animeCard = document.createElement('div');
     animeCard.classList.add('anime-card');
 
     const animeImage = document.createElement('img');
     const formattedAnime = anime.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('-');
-    const originalAnime = anime.replace(/\s+/g, '-');
-
-    // Try loading the image with the original capitalization
-    animeImage.src = `images/${originalAnime}.jpg`;
+    animeImage.src = `images/${formattedAnime}.jpg`;
     animeImage.alt = anime;
-
-    animeImage.onerror = () => {
-        // If the first attempt fails, try the formatted version
-        animeImage.src = `images/${formattedAnime}.jpg`;
-    };
 
     const animeTitle = document.createElement('h2');
     animeTitle.textContent = anime;
@@ -816,6 +807,7 @@ animeList.forEach(anime => {
     animeCard.appendChild(animeTitle);
     container.appendChild(animeCard);
 });
+
 
 
 }
