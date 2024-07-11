@@ -21,8 +21,9 @@ def rename_files(directory):
                 # Convert base filename to lowercase
                 new_base = new_base.lower()
                 
-                # Add a dash at the end of the filename
-                new_base = f"{new_base}-"
+                # Remove the dash at the end of the filename if it exists
+                if new_base.endswith('-'):
+                    new_base = new_base[:-1]
                 
                 # Combine the new base filename with the original extension
                 new_filename = f"{new_base}{ext}"
@@ -38,5 +39,5 @@ def rename_files(directory):
     except Exception as e:
         print(f'Error listing directory {directory}: {str(e)}')
 
-# Call the function to rename, remove hyphens, convert filenames to lowercase, and add a dash
+# Call the function to rename, remove hyphens, convert filenames to lowercase, and remove the dash
 rename_files(directory)
