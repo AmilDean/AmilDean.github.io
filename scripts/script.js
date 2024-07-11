@@ -804,14 +804,24 @@ animeList.forEach(anime => {
     };
 
     const formattedAnime = formatTitle(anime);
-    const formattedAnimeLower = formattedAnime.toLowerCase(); // Lowercase version of formatted title
+    const lowerCaseAnime = formatTitle(anime).toLowerCase();
+    const mixedCaseAnime = anime.replace(/[^\w\s-]/g, '').split(' ').map((word, index) => index % 2 === 0 ? word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() : word.toLowerCase()).join('-');
 
-    // Attempt to load images using both formatted and lowercase versions
     animeImage.src = `images/${formattedAnime}.jpg`;
     animeImage.alt = anime;
 
+    // Flags to prevent infinite loop
+    let triedLowerCase = false;
+    let triedMixedCase = false;
+
     animeImage.onerror = () => {
-        animeImage.src = `images/${formattedAnimeLower}.jpg`; // Try lowercase version directly
+        if (!triedLowerCase) {
+            animeImage.src = `images/${lowerCaseAnime}.jpg`;
+            triedLowerCase = true;
+        } else if (!triedMixedCase) {
+            animeImage.src = `images/${mixedCaseAnime}.jpg`;
+            triedMixedCase = true;
+        }
     };
 
     const animeTitle = document.createElement('h2');
@@ -821,6 +831,5 @@ animeList.forEach(anime => {
     animeCard.appendChild(animeTitle);
     container.appendChild(animeCard);
 });
-
 
 }
