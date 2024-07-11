@@ -790,23 +790,32 @@ if (document.body.classList.contains('index-page')) {
 		"A Journey Through Another World:Raising Kids",
     ];
 
-    const container = document.querySelector('main');
+ const container = document.querySelector('main');
 
-	animeList.forEach(anime => {
-		const animeCard = document.createElement('div');
-		animeCard.classList.add('anime-card');
+animeList.forEach(anime => {
+    const animeCard = document.createElement('div');
+    animeCard.classList.add('anime-card');
 
-		const animeImage = document.createElement('img');
-		const formattedAnime = anime.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('-');
-		animeImage.src = `images/${formattedAnime}.jpg`;
-		animeImage.alt = anime;
+    const animeImage = document.createElement('img');
+    const formattedAnime = anime.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('-');
+    const originalAnime = anime.replace(/\s+/g, '-');
 
-		const animeTitle = document.createElement('h2');
-		animeTitle.textContent = anime;
+    // Try loading the image with the original capitalization
+    animeImage.src = `images/${originalAnime}.jpg`;
+    animeImage.alt = anime;
 
-		animeCard.appendChild(animeImage);
-		animeCard.appendChild(animeTitle);
-		container.appendChild(animeCard);
-	});
+    animeImage.onerror = () => {
+        // If the first attempt fails, try the formatted version
+        animeImage.src = `images/${formattedAnime}.jpg`;
+    };
+
+    const animeTitle = document.createElement('h2');
+    animeTitle.textContent = anime;
+
+    animeCard.appendChild(animeImage);
+    animeCard.appendChild(animeTitle);
+    container.appendChild(animeCard);
+});
+
 
 }
