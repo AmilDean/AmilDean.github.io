@@ -799,17 +799,22 @@ animeList.forEach(anime => {
     const animeImage = document.createElement('img');
     const formattedAnime = anime.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('-');
     const lowerCaseAnime = anime.replace(/\s+/g, '-').toLowerCase();
+    const mixedCaseAnime = anime.split(' ').map((word, index) => index % 2 === 0 ? word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() : word.toLowerCase()).join('-');
 
     animeImage.src = `images/${formattedAnime}.jpg`;
     animeImage.alt = anime;
 
-    // Flag to prevent infinite loop
+    // Flags to prevent infinite loop
     let triedLowerCase = false;
+    let triedMixedCase = false;
 
     animeImage.onerror = () => {
         if (!triedLowerCase) {
             animeImage.src = `images/${lowerCaseAnime}.jpg`;
-            triedLowerCase = true; // Set the flag to true after the first attempt
+            triedLowerCase = true;
+        } else if (!triedMixedCase) {
+            animeImage.src = `images/${mixedCaseAnime}.jpg`;
+            triedMixedCase = true;
         }
     };
 
@@ -820,6 +825,7 @@ animeList.forEach(anime => {
     animeCard.appendChild(animeTitle);
     container.appendChild(animeCard);
 });
+
 
 
 
