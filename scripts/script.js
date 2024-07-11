@@ -803,9 +803,14 @@ animeList.forEach(anime => {
     animeImage.src = `images/${formattedAnime}.jpg`;
     animeImage.alt = anime;
 
+    // Flag to prevent infinite loop
+    let triedLowerCase = false;
+
     animeImage.onerror = () => {
-        // If the first attempt fails, try the lowercase version
-        animeImage.src = `images/${lowerCaseAnime}.jpg`;
+        if (!triedLowerCase) {
+            animeImage.src = `images/${lowerCaseAnime}.jpg`;
+            triedLowerCase = true; // Set the flag to true after the first attempt
+        }
     };
 
     const animeTitle = document.createElement('h2');
@@ -815,6 +820,7 @@ animeList.forEach(anime => {
     animeCard.appendChild(animeTitle);
     container.appendChild(animeCard);
 });
+
 
 
 
