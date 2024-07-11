@@ -1,4 +1,3 @@
-// Check if the current page is index.html before adding anime cards
 if (document.body.classList.contains('index-page')) {
     const animeList = [
 "Fairy Tail",
@@ -791,6 +790,12 @@ if (document.body.classList.contains('index-page')) {
     ];
 
     const container = document.querySelector('main');
+
+    // Counter element creation
+    const counter = document.createElement('div');
+    counter.classList.add('anime-counter');
+    counter.textContent = `Total Anime: ${animeList.length}`;
+    document.body.appendChild(counter); // Append counter to body
 
     animeList.forEach(anime => {
         const animeCard = document.createElement('div');
