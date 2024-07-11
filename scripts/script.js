@@ -1,7 +1,7 @@
 // Check if the current page is index.html before adding anime cards
 if (document.body.classList.contains('index-page')) {
     const animeList = [
-		"Fairy Tail",
+"Fairy Tail",
 		"Naruto",
 		"Naruto Shippuden",
 		"Boruto",
@@ -790,46 +790,37 @@ if (document.body.classList.contains('index-page')) {
 		"A Journey Through Another World:Raising Kids",
     ];
 
- const container = document.querySelector('main');
- 
-animeList.forEach(anime => {
-    const animeCard = document.createElement('div');
-    animeCard.classList.add('anime-card');
+    const container = document.querySelector('main');
 
-    const animeImage = document.createElement('img');
+    animeList.forEach(anime => {
+        const animeCard = document.createElement('div');
+        animeCard.classList.add('anime-card');
 
-    // Function to format anime titles
-    const formatTitle = (title, separator = '-') => {
-        return title.replace(/[^\w\s-]/g, '').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(separator);
-    };
+        const animeImage = document.createElement('img');
+        const formattedAnime = formatTitle(anime);
 
-    const formattedAnime = formatTitle(anime);
-    const lowerCaseAnime = formatTitle(anime).toLowerCase();
-    const mixedCaseAnime = anime.replace(/[^\w\s-]/g, '').split(' ').map((word, index) => index % 2 === 0 ? word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() : word.toLowerCase()).join('-');
+        animeImage.src = `images/${formattedAnime}.jpg`;
+        animeImage.alt = anime; // Set alt attribute for accessibility
 
-    animeImage.src = `images/${formattedAnime}.jpg`;
-    animeImage.alt = anime;
+        animeImage.onerror = () => {
+            if (!triedLowerCase) {
+                animeImage.src = `images/${formattedAnime}.jpg`; // Attempt lowercase and no spaces version
+                triedLowerCase = true;
+            } else {
+                animeImage.src = 'images/default.jpg'; // Fallback image if all attempts fail
+            }
+        };
 
-    // Flags to prevent infinite loop
-    let triedLowerCase = false;
-    let triedMixedCase = false;
+        const animeTitle = document.createElement('h2');
+        animeTitle.textContent = anime;
 
-    animeImage.onerror = () => {
-        if (!triedLowerCase) {
-            animeImage.src = `images/${lowerCaseAnime}.jpg`;
-            triedLowerCase = true;
-        } else if (!triedMixedCase) {
-            animeImage.src = `images/${mixedCaseAnime}.jpg`;
-            triedMixedCase = true;
-        }
-    };
+        animeCard.appendChild(animeImage);
+        animeCard.appendChild(animeTitle);
+        container.appendChild(animeCard);
+    });
+}
 
-    const animeTitle = document.createElement('h2');
-    animeTitle.textContent = anime;
-
-    animeCard.appendChild(animeImage);
-    animeCard.appendChild(animeTitle);
-    container.appendChild(animeCard);
-});
-
+// Function to format anime titles
+function formatTitle(title) {
+    return title.replace(/[^\w\s-]/g, '').toLowerCase().replace(/\s+/g, '');
 }
