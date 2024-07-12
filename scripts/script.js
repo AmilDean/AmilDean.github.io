@@ -792,7 +792,7 @@ if (document.body.classList.contains('anime-page')) {
 
     const queueAnimeList = [
         // List of anime titles in queue...
-        "redcatramen"
+        "Red Cat Ramen"
     ];
 
     const container = document.querySelector('main');
