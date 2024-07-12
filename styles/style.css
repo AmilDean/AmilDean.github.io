@@ -12,12 +12,14 @@ header {
     padding: 1em;
     display: flex;
     align-items: center;
-    justify-content: space-between; 
+    justify-content: center; /* Center content horizontally */
     width: 100%; 
     box-sizing: border-box; 
 }
 
 .navigation {
+    position: absolute;
+    left: 20px; /* Adjust this value if necessary */
     display: flex;
     gap: 1em;
 }
@@ -37,9 +39,7 @@ header {
 
 h1 {
     margin: 0;
-    flex-grow: 1;
-    text-align: center;
-	color: #D3D3D3;
+    color: #D3D3D3;
 }
 
 main {
@@ -93,7 +93,7 @@ main {
 .anime-counter {
     position: absolute;
     top: 20px;
-    right: 800px;
+    right: 20px;
     color: #D3D3D3;
     padding: 0.5em 1em;
     border-radius: 4px;
@@ -144,3 +144,18 @@ main {
     font-weight: bold;
 }
 
+.search-bar {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin: 20px auto 10px; /* Adjust the top margin value as needed */
+    display: block;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #277264;
+}

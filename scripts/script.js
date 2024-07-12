@@ -786,8 +786,7 @@ if (document.body.classList.contains('anime-page')) {
 		"The Elusive Samurai",
 		"Dahlia in Bloom",
 		"TASUKETSU",
-		"A Journey Through Another World:Raising Kids",
-    ];
+		"A Journey Through Another World:Raising Kids",];
 
     const container = document.querySelector('main');
 
@@ -797,32 +796,50 @@ if (document.body.classList.contains('anime-page')) {
     counter.textContent = `Total Anime: ${animeList.length}`;
     document.body.appendChild(counter); // Append counter to body
 
-    animeList.forEach(anime => {
-        const animeCard = document.createElement('div');
-        animeCard.classList.add('anime-card');
+    // Create the search bar and add event listener
+    const searchBar = document.getElementById('searchBar');
+    searchBar.addEventListener('input', filterAnimeList);
 
-        const animeImage = document.createElement('img');
-        const formattedAnime = formatTitle(anime);
+    // Function to create and display anime cards
+    function displayAnimeList(list) {
+        container.innerHTML = ''; // Clear the container
+        list.forEach(anime => {
+            const animeCard = document.createElement('div');
+            animeCard.classList.add('anime-card');
 
-        // Check if the image file exists before setting src
-        const imageSrc = `images/${formattedAnime}.jpg`;
-        imageExists(imageSrc, function(exists) {
-            if (exists) {
-                animeImage.src = imageSrc;
-            } else {
-                animeImage.src = 'images/default.jpg'; // Fallback image for specific anime
-            }
+            const animeImage = document.createElement('img');
+            const formattedAnime = formatTitle(anime);
+
+            // Check if the image file exists before setting src
+            const imageSrc = `images/${formattedAnime}.jpg`;
+            imageExists(imageSrc, function(exists) {
+                if (exists) {
+                    animeImage.src = imageSrc;
+                } else {
+                    animeImage.src = 'images/default.jpg'; // Fallback image for specific anime
+                }
+            });
+
+            animeImage.alt = anime; // Set alt attribute for accessibility
+
+            const animeTitle = document.createElement('h2');
+            animeTitle.textContent = anime;
+
+            animeCard.appendChild(animeImage);
+            animeCard.appendChild(animeTitle);
+            container.appendChild(animeCard);
         });
+    }
 
-        animeImage.alt = anime; // Set alt attribute for accessibility
+    // Function to filter the anime list based on search input
+    function filterAnimeList(event) {
+        const searchText = event.target.value.toLowerCase();
+        const filteredList = animeList.filter(anime => anime.toLowerCase().includes(searchText));
+        displayAnimeList(filteredList);
+    }
 
-        const animeTitle = document.createElement('h2');
-        animeTitle.textContent = anime;
-
-        animeCard.appendChild(animeImage);
-        animeCard.appendChild(animeTitle);
-        container.appendChild(animeCard);
-    });
+    // Initial display of all anime
+    displayAnimeList(animeList);
 }
 
 // Function to check if an image exists at a given URL
