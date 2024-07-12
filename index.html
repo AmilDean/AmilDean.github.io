@@ -5,15 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brown's Anime Watchlist</title>
     <link rel="stylesheet" href="styles/style.css">
-    <script>
-        if (location.pathname.endsWith('/index.html')) {
-            location.replace('/index');
-        }
-    </script>
 </head>
 <body class="index-page">
     <header>
         <nav class="navigation">
+            <a href="welcome.html">Home</a>
             <a href="index.html">Anime</a>
             <a href="japanese.html">Japanese</a>
         </nav>
@@ -21,6 +17,7 @@
     </header>
     <main>
         <!-- Anime cards will be dynamically added here -->
+        <div id="anime-list"></div>
     </main>
     <script src="scripts/script.js"></script>
 </body>
