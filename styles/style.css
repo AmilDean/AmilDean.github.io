@@ -135,3 +135,13 @@ main {
     background-color: #1f5b4e;
 }
 
+.in-progress {
+    color: #FFA500 !important;
+    font-weight: bold;
+}
+
+.not-started {
+    color: #FF0000 !important; 
+    font-weight: bold;
+}
+
