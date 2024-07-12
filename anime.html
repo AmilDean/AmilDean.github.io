@@ -15,8 +15,11 @@
         </nav>
         <h1>Watched Animes</h1>
     </header>
-    <input type="text" id="searchBar" placeholder="Search anime..." class="search-bar">
-
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search anime..." class="search-bar">
+        <button id="watchedButton" class="filter-button active">Watched</button>
+        <button id="queueButton" class="filter-button">Queue</button>
+    </div>
     <main>
         <!-- Anime cards will be dynamically added here -->
         <div id="anime-list"></div>

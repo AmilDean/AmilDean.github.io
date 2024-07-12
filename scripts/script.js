@@ -1,5 +1,5 @@
 if (document.body.classList.contains('anime-page')) {
-    const animeList = [
+    const watchedAnimeList = [
 "Fairy Tail",
 		"Naruto",
 		"Naruto Shippuden",
@@ -786,23 +786,44 @@ if (document.body.classList.contains('anime-page')) {
 		"The Elusive Samurai",
 		"Dahlia in Bloom",
 		"TASUKETSU",
-		"A Journey Through Another World:Raising Kids",];
+		"A Journey Through Another World:Raising Kids",
+    ];
+
+    const queueAnimeList = [
+        // List of anime titles in queue...
+        "Red Cat Ramen"
+    ];
 
     const container = document.querySelector('main');
-
-    // Counter element creation
     const counter = document.createElement('div');
     counter.classList.add('anime-counter');
-    counter.textContent = `Total Anime: ${animeList.length}`;
-    document.body.appendChild(counter); // Append counter to body
+    document.body.appendChild(counter);
 
-    // Create the search bar and add event listener
     const searchBar = document.getElementById('searchBar');
-    searchBar.addEventListener('input', filterAnimeList);
+    const watchedButton = document.getElementById('watchedButton');
+    const queueButton = document.getElementById('queueButton');
 
-    // Function to create and display anime cards
+    let currentList = watchedAnimeList;
+
+    searchBar.addEventListener('input', filterAnimeList);
+    watchedButton.addEventListener('click', () => switchList('watched'));
+    queueButton.addEventListener('click', () => switchList('queue'));
+
+    function switchList(list) {
+        if (list === 'watched') {
+            currentList = watchedAnimeList;
+            watchedButton.classList.add('active');
+            queueButton.classList.remove('active');
+        } else if (list === 'queue') {
+            currentList = queueAnimeList;
+            queueButton.classList.add('active');
+            watchedButton.classList.remove('active');
+        }
+        filterAnimeList();
+    }
+
     function displayAnimeList(list) {
-        container.innerHTML = ''; // Clear the container
+        container.innerHTML = '';
         list.forEach(anime => {
             const animeCard = document.createElement('div');
             animeCard.classList.add('anime-card');
@@ -810,18 +831,12 @@ if (document.body.classList.contains('anime-page')) {
             const animeImage = document.createElement('img');
             const formattedAnime = formatTitle(anime);
 
-            // Check if the image file exists before setting src
             const imageSrc = `images/${formattedAnime}.jpg`;
-            imageExists(imageSrc, function(exists) {
-                if (exists) {
-                    animeImage.src = imageSrc;
-                } else {
-                    animeImage.src = 'images/default.jpg'; // Fallback image for specific anime
-                }
+            imageExists(imageSrc, function (exists) {
+                animeImage.src = exists ? imageSrc : 'images/default.jpg';
             });
 
-            animeImage.alt = anime; // Set alt attribute for accessibility
-
+            animeImage.alt = anime;
             const animeTitle = document.createElement('h2');
             animeTitle.textContent = anime;
 
@@ -831,30 +846,23 @@ if (document.body.classList.contains('anime-page')) {
         });
     }
 
-    // Function to filter the anime list based on search input
-    function filterAnimeList(event) {
-        const searchText = event.target.value.toLowerCase();
-        const filteredList = animeList.filter(anime => anime.toLowerCase().includes(searchText));
+    function filterAnimeList() {
+        const searchText = searchBar.value.toLowerCase();
+        const filteredList = currentList.filter(anime => anime.toLowerCase().includes(searchText));
         displayAnimeList(filteredList);
+        counter.textContent = `Total Anime: ${filteredList.length}`;
     }
 
-    // Initial display of all anime
-    displayAnimeList(animeList);
-}
+    function imageExists(url, callback) {
+        const img = new Image();
+        img.onload = () => callback(true);
+        img.onerror = () => callback(false);
+        img.src = url;
+    }
 
-// Function to check if an image exists at a given URL
-function imageExists(url, callback) {
-    const img = new Image();
-    img.onload = function() {
-        callback(true);
-    };
-    img.onerror = function() {
-        callback(false);
-    };
-    img.src = url;
-}
+    function formatTitle(title) {
+        return title.replace(/[^\w\s-]/g, '').toLowerCase().replace(/[\s-]+/g, '');
+    }
 
-// Function to format anime titles
-function formatTitle(title) {
-    return title.replace(/[^\w\s-]/g, '').toLowerCase().replace(/[\s-]+/g, '');
+    switchList('watched');
 }

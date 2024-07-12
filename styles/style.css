@@ -14,7 +14,8 @@ header {
     align-items: center;
     justify-content: center; /* Center content horizontally */
     width: 100%; 
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    flex-direction: column; /* Stack elements vertically */
 }
 
 .navigation {
@@ -65,7 +66,6 @@ main {
     justify-content: center;
     align-items: center;
 	color: #D3D3D3;
-
 }
 
 .anime-card img {
@@ -144,11 +144,18 @@ main {
     font-weight: bold;
 }
 
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+}
+
 .search-bar {
     width: 100%;
     max-width: 300px;
     padding: 10px;
-    margin: 20px auto 10px; /* Adjust the top margin value as needed */
     display: block;
     border: 2px solid #ddd;
     border-radius: 4px;
@@ -158,4 +165,22 @@ main {
 .search-bar:focus {
     outline: none;
     border-color: #277264;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #277264;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+}
+
+.filter-button:hover {
+    background-color: #1f5b4e;
+}
+
+.filter-button.active {
+    background-color: #1f5b4e;
 }
