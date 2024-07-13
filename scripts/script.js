@@ -893,3 +893,27 @@ if (document.body.classList.contains('anime-page')) {
 
     switchList('watched');
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const banners = [
+        { img: 'images/bannergintama.jpg', title: 'Gintama', description: 'The Amanto, vicious aliens from outer space, has taken over the country of Japan. It has suppressed all the samurais by prohibiting the usage of samurai swords. Sakata Gintoki is one of the few remaining samurai. Along with Shimura… Gintama is a rare case that is rated G for everyone. Every single episode in the series has unique storyline and actions. The story follows Gintoki as he assists victims of the the Amanto’s invasion by fighting with the shinsengumi and the aliens. Hope you enjoy the show as most of our staffs did' },
+        { img: 'images/bannersg.jpg', title: 'Steins;Gate', description: 'The story of Steins;Gate takes place in Akihabara and is about a group of friends who have managed to customize their microwave into a device that can send text messages to the past. As they perform different experiments, an organization named SERN who has been doing their own research on time travel tracks them down and now the characters have to find a way to avoid being captured by them.' },
+        { img: 'images/bannermia.jpg', title: 'Made In Abyss', description: 'The enormous cave system, known as the Abyss, is the only unexplored place in the world. Nobody knows how deep down goes this titanic pit, inhabited by strange and wondrous creatures and full of mysterious ancient relics which purpose in unknown to modern man. Generations of bold adventurers have been drawn by the cryptic depths of the Abyss. In course of time those bold enough to explore the dangerous pit came to be known as "Cave Raiders." In Oosu, the town at the edge of the Abyss, there lives a little orphan named Rico, who dreams of becoming as great a cave raider as her mother was and solving the great mystery of the pit. One day exploring the murky depths she stumbles upon a little boy, who turns out to be a robot...' }
+    ];
+    let currentBanner = 0;
+    const bannerElement = document.getElementById('banner');
+    const bannerTitle = document.getElementById('bannerTitle');
+    const bannerDescription = document.getElementById('bannerDescription');
+
+    function updateBanner() {
+        const { img, title, description } = banners[currentBanner];
+        bannerElement.style.backgroundImage = `url(${img})`;
+        bannerTitle.textContent = title;
+        bannerDescription.textContent = description;
+        currentBanner = (currentBanner + 1) % banners.length;
+    }
+
+    // Initialize the banner
+    updateBanner();
+    // Rotate banner every 5 seconds
+    setInterval(updateBanner, 5000);
+});
