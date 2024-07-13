@@ -184,3 +184,37 @@ main {
 .filter-button.active {
     background-color: #1f5b4e;
 }
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode header, body.dark-mode .anime-card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode-toggle {
+    background-color: #277264;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20px; /* Space between title and button */
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+}
+
+body.dark-mode .search-bar {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #555;
+}
+
+body.dark-mode .search-bar::placeholder {
+    color: #aaa;
+}

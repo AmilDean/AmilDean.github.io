@@ -13,7 +13,10 @@
             <a href="anime.html">Anime</a>
             <a href="japanese.html">Japanese</a>
         </nav>
-        <h1>Watched Animes</h1>
+        <div class="title-container">
+            <h1>Watched Animes</h1>
+            <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        </div>
     </header>
     <div class="search-container">
         <input type="text" id="searchBar" placeholder="Search anime..." class="search-bar">
@@ -21,9 +24,9 @@
         <button id="queueButton" class="filter-button">Queue</button>
     </div>
     <main>
-        <!-- Anime cards will be dynamically added here -->
         <div id="anime-list"></div>
     </main>
+    <div class="anime-counter" id="animeCounter">Total Watched Anime: 0</div>
     <script src="scripts/script.js"></script>
 </body>
 </html>
