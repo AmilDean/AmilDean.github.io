@@ -124,6 +124,14 @@ main {
     width: auto;
 }
 
+.left-image {
+    position: absolute;
+    bottom: 0px; /* Adjust as needed to align with the bottom */
+    left: 0px; /* Adjust as needed to move it towards the right */
+    max-width: 400px; /* Adjust the size as needed */
+    width: auto;
+}
+
 .welcome-page .welcome-section {
 }
 
