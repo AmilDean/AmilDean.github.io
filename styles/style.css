@@ -104,6 +104,37 @@ main {
 }
 
 .welcome-section {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #002618;
+    color: #D3D3D3;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.side-image {
+    position: absolute;
+    bottom: 0px; /* Adjust as needed to align with the bottom */
+    right: 0px; /* Adjust as needed to move it towards the right */
+    max-width: 100%; /* Adjust the size as needed */
+    width: auto;
+}
+
+.welcome-page .welcome-section {
+}
+
+.anime-page .anime-section {
+}
+
+.japanese-page .welcome-section {
+    position: absolute;
+    top: 10%; /* Adjust this value to move the box further up or down */
+    left: 50%;
+    transform: translate(-50%, -10%);
     text-align: center;
     background-color: #002618;
     color: #D3D3D3;
