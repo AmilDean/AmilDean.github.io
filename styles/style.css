@@ -366,8 +366,9 @@ body.dark-mode .search-bar::placeholder {
         position: relative;
         left: 0;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start; 
         gap: 0.5em;
+        width: 100%;
     }
 
     .title-container {
@@ -375,6 +376,21 @@ body.dark-mode .search-bar::placeholder {
         text-align: center;
     }
 
+    .welcome-section {
+        width: 70%; 
+        padding: 0.8em;
+        font-size: 0.8em; 
+    }
+	
+    .side-image {
+        display: none;
+    }
+	
+    .left-image {
+        max-width: 50%;
+		bottom: 100px;
+		left: 100px;
+    }
     .anime-card {
         width: 100%;
         max-width: 300px;
@@ -397,12 +413,15 @@ body.dark-mode .search-bar::placeholder {
     }
 
     .banner {
-        height: 300px;
+        height: 200px; 
     }
 
-    .welcome-section {
-        width: 90%;
-        padding: 1em;
+    .banner-text h3 {
+        font-size: 1em; 
+    }
+
+    .banner-text p {
+        display: none;
     }
 
     .search-container {
@@ -413,10 +432,28 @@ body.dark-mode .search-bar::placeholder {
     .search-bar {
         width: 90%;
     }
+
+    .japanese-page .welcome-section {
+        top: 30%;
+    }
 }
 
 /* Small Mobile Screens */
 @media (max-width: 480px) {
+    .welcome-section {
+        width: 80%; 
+        font-size: 0.7em; 
+    }
+
+    .side-image {
+        display: none;
+    }
+	
+    .left-image {
+        max-width: 50%;
+		bottom: 100px;
+		left: 100px;
+    }
     .anime-card {
         width: 100%;
         max-width: 200px;
@@ -427,10 +464,22 @@ body.dark-mode .search-bar::placeholder {
     }
 
     .banner {
-        height: 200px;
+        height: 150px; 
+    }
+
+    .banner-text h3 {
+        font-size: 0.8em; 
+    }
+
+    .banner-text p {
+        display: none; 
     }
 
     .search-bar {
         width: 100%;
+    }
+
+    .japanese-page .welcome-section {
+        top: 40%;
     }
 }
