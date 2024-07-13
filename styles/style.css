@@ -388,7 +388,7 @@ body.dark-mode .search-bar::placeholder {
 	
     .left-image {
         max-width: 50%;
-		bottom: 100px;
+		bottom: 0px;
 		left: 100px;
     }
     .anime-card {
@@ -451,7 +451,7 @@ body.dark-mode .search-bar::placeholder {
 	
     .left-image {
         max-width: 50%;
-		bottom: 100px;
+		bottom: 0px;
 		left: 100px;
     }
     .anime-card {
