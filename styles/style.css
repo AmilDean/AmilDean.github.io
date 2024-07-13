@@ -118,17 +118,17 @@ main {
 
 .side-image {
     position: absolute;
-    bottom: 0px; /* Adjust as needed to align with the bottom */
-    right: 0px; /* Adjust as needed to move it towards the right */
-    max-width: 100%; /* Adjust the size as needed */
+    bottom: 0px;
+    right: 0px; 
+    max-width: 100%; 
     width: auto;
 }
 
 .left-image {
     position: absolute;
-    bottom: 0px; /* Adjust as needed to align with the bottom */
-    left: 0px; /* Adjust as needed to move it towards the right */
-    max-width: 400px; /* Adjust the size as needed */
+    bottom: 0px; 
+    left: 3%;
+    max-width: 400px;
     width: auto;
 }
 
@@ -140,7 +140,7 @@ main {
 
 .japanese-page .welcome-section {
     position: absolute;
-    top: 10%; /* Adjust this value to move the box further up or down */
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -10%);
     text-align: center;
