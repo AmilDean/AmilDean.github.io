@@ -7,7 +7,7 @@
     padding: 10px 20px;
     border: none;
     background-color: #277264;
-    color: white;
+    color: #D3D3D3;
     cursor: pointer;
     transition: background-color 0.3s;
     border-radius: 4px;
@@ -27,7 +27,7 @@
     padding: 10px 20px;
     border: none;
     background-color: #277264;
-    color: white;
+    color: #D3D3D3;
     cursor: pointer;
     transition: background-color 0.3s;
     border-radius: 4px;
@@ -51,7 +51,7 @@ body {
 
 header {
     background-color: #002618;
-    color: white;
+    color: #D3D3D3;
     padding: 1em;
     display: flex;
     align-items: center;

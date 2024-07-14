@@ -805,7 +805,7 @@ if (document.body.classList.contains('anime-page')) {
     ];
 
     const queueAnimeList = [
-        { en: "Red Cat Ramen", jp: "赤い猫のラーメン" }
+        { en: "Red Cat Ramen", jp: "赤い猫のラーメン", romaji: "Ramen Aka Neko"}
     ];
 
     const container = document.querySelector('main');
