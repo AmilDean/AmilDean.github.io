@@ -116,7 +116,6 @@ main {
 /* style.css */
 .side-image,
 .left-image {
-    max-width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -127,22 +126,26 @@ main {
     position: absolute;
     bottom: 0px;
     right: 0px;
-    width: 800px; /* Adjust this value as needed */
+	max-width: 200%;
+	max-height: 75%;
+    width: auto;
 }
 
 .left-image {
     position: absolute;
     bottom: 0px;
     left: 3%;
-    width: 400px; /* Adjust this value as needed */
+    max-width: 200%;
+	max-height: 80%;
+    width: auto; 
 }
 
-
 .UC-image {
-	position: absolute;
-    bottom: 20%;
+    position: static;
+    margin-top: 80px; 
     max-width: 100%;
-	height: auto;
+    max-height: 100%;
+    height: auto;
     width: auto;
 }
 
