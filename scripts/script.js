@@ -805,7 +805,9 @@ if (document.body.classList.contains('anime-page')) {
 		"A Journey Through Another World:Raising Kids",
 		"ATRI: My Dear Moments",
 		"Makeine: Too Many Losing Heroines!",
-		"MAYONAKA PUNCH"
+		"MAYONAKA PUNCH",
+		"Bye Bye, Earth",
+		"Head Start at Birth",
     ];
 
     const queueAnimeList = [
