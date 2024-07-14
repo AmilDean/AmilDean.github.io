@@ -1,3 +1,45 @@
+.lang-switch {
+    display: flex;
+    gap: 5px;
+}
+
+.lang-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #277264;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+}
+
+.lang-button:hover {
+    background-color: #1f5b4e;
+}
+
+.lang-button.active {
+    background-color: #1f5b4e;
+}
+
+
+.filter-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #277264;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+}
+
+.filter-button:hover {
+    background-color: #1f5b4e;
+}
+
+.filter-button.active {
+    background-color: #1f5b4e;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -161,10 +203,8 @@ main {
 
 .welcome-page .welcome-section {
 }
-/* NA */
 .anime-page .anime-section {
 }
-/* NA */
 .japanese-page .welcome-section {
     position: absolute;
     top: 10%;
@@ -233,24 +273,6 @@ main {
 .search-bar:focus {
     outline: none;
     border-color: #277264;
-}
-
-.filter-button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #277264;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 4px;
-}
-
-.filter-button:hover {
-    background-color: #1f5b4e;
-}
-
-.filter-button.active {
-    background-color: #1f5b4e;
 }
 
 body.dark-mode {
