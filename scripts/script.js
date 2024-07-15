@@ -170,7 +170,7 @@ if (document.body.classList.contains('anime-page')) {
 { en: "Monthly Girls' Nozaki-kun", jp: "月刊少女野崎くん", romaji: "Gekkan Shoujo Nozaki-kun" },
 { en: "My Little Monster", jp: "となりの怪物くん", romaji: "Tonari no Kaibutsu-kun" },
 { en: "Love Tyrant", jp: "恋愛暴君", romaji: "Renai Boukun" },
-{ en: "March Comes in Like a Lion", jp: "3月のライオン", romaji: "3-gatsu no Lion" },
+{ en: "March Comes in Like a Lion", jp: "3月のライオン", romaji: "3-gatsu no Lion (Sangatsu no Lion)" },
 { en: "Orange", jp: "オレンジ", romaji: "Orange" },
 { en: "ReWrite", jp: "Rewrite", romaji: "ReWrite" },
 { en: "ALDNOAH.ZERO", jp: "アルドノア・ゼロ", romaji: "Aldnoah.Zero" },
