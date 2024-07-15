@@ -55,7 +55,7 @@ header {
     padding: 1em;
     display: flex;
     align-items: center;
-    justify-content: center; /* Center content horizontally */
+    justify-content: center;
     width: 100%;
     box-sizing: border-box;
     flex-direction: column;
