@@ -711,7 +711,7 @@ if (document.body.classList.contains('anime-page')) {
 { en: "D4DJ", jp: "D4DJ", romaji: "D4DJ: First Mix  " },
 { en: "The Girl I Like Forgot Her Glasses", jp: "好きな子がめがねを忘れた", romaji: "Suki na Ko ga Megane wo Wasureta  " },
 { en: "My Tiny Senpai", jp: "うちの会社の小さい先輩の話", romaji: "Uchi no Kaisha no Chiisai Senpai no Hanashi  " },
-{ en: "Level 1 Demon Lord and One Room Hero", jp: "レベル1の魔王とワンルーム勇者", romaji: "Level 1 Demon Lord and One Room Hero  " },
+{ en: "Level 1 Demon Lord and One Room Hero", jp: "レベル1の魔王とワンルーム勇者", romaji: "Lv1 Maou to One Room Yuusha" },
 { en: "Liar Liar", jp: "LIAR・LIAR", romaji: "Liar Liar  " },
 { en: "Zom 100: Bucket List of the Dead", jp: "ZOM100〜ゾンビになるまでにしたい100のこと〜", romaji: "Zom 100: Zombie ni Naru made ni Shitai 100 no Koto  " },
 { en: "Ayaka: A Story of Bonds and Wounds", jp: "AYAKA -あやか-", romaji: "Ayaka  " },
