@@ -13,7 +13,6 @@ function applyDarkModeFromLocalStorage() {
 
 document.addEventListener('DOMContentLoaded', applyDarkModeFromLocalStorage);
 
-
 if (document.body.classList.contains('anime-page')) {
     const watchedAnimeList = [
 { en: "Fairy Tail", jp: "フェアリーテイル", romaji: "Fairy Tail" },
@@ -811,7 +810,7 @@ if (document.body.classList.contains('anime-page')) {
     ];
 
     const queueAnimeList = [
-        { en: "Red Cat Ramen", jp: "赤い猫のラーメン", romaji: "Ramen Aka Neko"}
+        { en: "Red Cat Ramen", jp: "赤い猫のラーメン", romaji: "Ramen Aka Neko" }
     ];
 
     const container = document.querySelector('main');
@@ -822,7 +821,7 @@ if (document.body.classList.contains('anime-page')) {
     const queueButton = document.getElementById('queueButton');
     const langENButton = document.getElementById('langEN');
     const langJPButton = document.getElementById('langJP');
-	const langROMButton = document.getElementById('langROM');
+    const langROMButton = document.getElementById('langROM');
     const titleElement = document.querySelector('header h1');
 
     let currentList = watchedAnimeList;
@@ -833,7 +832,7 @@ if (document.body.classList.contains('anime-page')) {
     queueButton.addEventListener('click', () => switchList('queue'));
     langENButton.addEventListener('click', () => switchLanguage('EN'));
     langJPButton.addEventListener('click', () => switchLanguage('JP'));
-	langROMButton.addEventListener('click', () => switchLanguage('ROM'));
+    langROMButton.addEventListener('click', () => switchLanguage('ROM'));
 
     function switchList(list) {
         if (list === 'watched') {
@@ -841,41 +840,40 @@ if (document.body.classList.contains('anime-page')) {
             watchedButton.classList.add('active');
             queueButton.classList.remove('active');
             titleElement.textContent = 'Watched Animes';
-            counter.textContent = `Total Watched Anime: ${currentList.length}`;
         } else if (list === 'queue') {
             currentList = queueAnimeList;
             queueButton.classList.add('active');
             watchedButton.classList.remove('active');
             titleElement.textContent = 'Watchlist';
-            counter.textContent = `Total Queued Anime: ${currentList.length}`;
         }
+        updateTotalCounter();
         filterAnimeList();
     }
 
-	function switchLanguage(lang) {
-		currentLang = lang;
-		langENButton.classList.toggle('active', lang === 'EN');
-		langJPButton.classList.toggle('active', lang === 'JP');
-		langROMButton.classList.toggle('active', lang === 'ROM');
-		updateAnimeTitles();
-	}
+    function switchLanguage(lang) {
+        currentLang = lang;
+        langENButton.classList.toggle('active', lang === 'EN');
+        langJPButton.classList.toggle('active', lang === 'JP');
+        langROMButton.classList.toggle('active', lang === 'ROM');
+        updateAnimeTitles();
+    }
 
-	function updateAnimeTitles() {
-		const animeCards = document.querySelectorAll('.anime-card');
-		animeCards.forEach(card => {
-			const titleElement = card.querySelector('h2');
-			const englishTitle = titleElement.getAttribute('data-en-title');
-			const japaneseTitle = titleElement.getAttribute('data-jp-title');
-			const romajiTitle = titleElement.getAttribute('data-romaji-title');
-			if (currentLang === 'EN') {
-				titleElement.textContent = englishTitle;
-			} else if (currentLang === 'JP') {
-				titleElement.textContent = japaneseTitle;
-			} else {
-				titleElement.textContent = romajiTitle;
-			}
-		});
-	}
+    function updateAnimeTitles() {
+        const animeCards = document.querySelectorAll('.anime-card');
+        animeCards.forEach(card => {
+            const titleElement = card.querySelector('h2');
+            const englishTitle = titleElement.getAttribute('data-en-title');
+            const japaneseTitle = titleElement.getAttribute('data-jp-title');
+            const romajiTitle = titleElement.getAttribute('data-romaji-title');
+            if (currentLang === 'EN') {
+                titleElement.textContent = englishTitle;
+            } else if (currentLang === 'JP') {
+                titleElement.textContent = japaneseTitle;
+            } else {
+                titleElement.textContent = romajiTitle;
+            }
+        });
+    }
 
     function displayAnimeList(list) {
         container.innerHTML = '';
@@ -908,14 +906,13 @@ if (document.body.classList.contains('anime-page')) {
             animeCard.appendChild(animeTitle);
             container.appendChild(animeCard);
         });
-        updateCounter(list.length);
     }
 
     function filterAnimeList() {
         const searchText = searchBar.value.toLowerCase();
-        const filteredList = currentList.filter(anime => 
-            anime.en.toLowerCase().includes(searchText) || 
-            anime.jp.toLowerCase().includes(searchText) || 
+        const filteredList = currentList.filter(anime =>
+            anime.en.toLowerCase().includes(searchText) ||
+            anime.jp.toLowerCase().includes(searchText) ||
             anime.romaji.toLowerCase().includes(searchText)
         );
         displayAnimeList(filteredList);
@@ -932,14 +929,16 @@ if (document.body.classList.contains('anime-page')) {
         return title.replace(/[^\w\s-]/g, '').toLowerCase().replace(/[\s-]+/g, '');
     }
 
-    function updateCounter(count) {
+    function updateTotalCounter() {
         if (currentList === watchedAnimeList) {
-            counter.textContent = `Total Watched Anime: ${count}`;
+            counter.textContent = `Total Watched Anime: ${watchedAnimeList.length}`;
         } else {
-            counter.textContent = `Total Queued Anime: ${count}`;
+            counter.textContent = `Total Queued Anime: ${queueAnimeList.length}`;
         }
     }
 
+    // Initialize the total counter and the list display
+    updateTotalCounter();
     switchList('watched');
 }
 
