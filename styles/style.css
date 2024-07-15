@@ -47,6 +47,7 @@ body {
     padding: 0;
     background-color: #277264;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    transition: background-color 0.5s, color 0.5s;
 }
 
 header {
@@ -59,6 +60,10 @@ header {
     width: 100%;
     box-sizing: border-box;
     flex-direction: column;
+}
+
+header, .anime-card, .search-bar, .filter-container, .dark-mode-toggle, .banner-text, .banner-top-left {
+    transition: background-color 0.5s, color 0.5s;
 }
 
 .navigation {
