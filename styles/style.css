@@ -536,3 +536,18 @@ body.dark-mode .search-bar::placeholder {
         top: 40%;
     }
 }
+
+.filter-dropdown {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #000;
+    margin-right: 10px; /* Adjust as needed for spacing */
+}
+
+.filter-dropdown:focus {
+    outline: none;
+    border-color: #277264;
+}
