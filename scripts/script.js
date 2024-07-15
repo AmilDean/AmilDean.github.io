@@ -17,7 +17,7 @@ if (document.body.classList.contains('anime-page')) {
     const watchedAnimeList = [
 { en: "Fairy Tail", jp: "フェアリーテイル", romaji: "Fairy Tail", genre: [ "Action", "Adventure", "Fantasy"], type: "TV" },
 { en: "Naruto", jp: "ナルト", romaji: "Naruto", genre: [ "Action", "Adventure", "Martial Arts"], type: "TV" },
-{ en: "Naruto Shippuden", jp: "E2", romaji: "Naruto Shippuden", genre: [ "Action", "Adventure", "Martial Arts"], type: "TV" },
+{ en: "Naruto Shippuden", jp: "ナルト- 疾風伝", romaji: "Naruto Shippuden", genre: [ "Action", "Adventure", "Martial Arts"], type: "TV" },
 { en: "Boruto", jp: "BORUTO-ボルト- NARUTO NEXT GENERATIONS", romaji: "Boruto", genre: [ "Action", "Adventure", "Martial Arts"], type: "TV" },
 { en: "One Piece", jp: "ワンピース", romaji: "One Piece", genre: [ "Action", "Adventure", "Fantasy"], type: "TV" },
 { en: "Dragon Ball", jp: "ドラゴンボール", romaji: "Dragon Ball", genre: [ "Action", "Adventure", "Martial Arts"], type: "TV" },
@@ -819,8 +819,6 @@ if (document.body.classList.contains('anime-page')) {
     const searchBar = document.getElementById('searchBar');
     const watchedButton = document.getElementById('watchedButton');
     const queueButton = document.getElementById('queueButton');
-    const genreFilter = document.getElementById('genreFilter');
-    const typeFilter = document.getElementById('typeFilter');
     const langENButton = document.getElementById('langEN');
     const langJPButton = document.getElementById('langJP');
     const langROMButton = document.getElementById('langROM');
@@ -832,8 +830,9 @@ if (document.body.classList.contains('anime-page')) {
     searchBar.addEventListener('input', filterAnimeList);
     watchedButton.addEventListener('click', () => switchList('watched'));
     queueButton.addEventListener('click', () => switchList('queue'));
-    genreFilter.addEventListener('change', filterAnimeList);
-    typeFilter.addEventListener('change', filterAnimeList);
+    document.querySelectorAll('input[name="genre"], input[name="type"]').forEach(checkbox => {
+        checkbox.addEventListener('change', filterAnimeList);
+    });
     langENButton.addEventListener('click', () => switchLanguage('EN'));
     langJPButton.addEventListener('click', () => switchLanguage('JP'));
     langROMButton.addEventListener('click', () => switchLanguage('ROM'));
@@ -914,12 +913,12 @@ if (document.body.classList.contains('anime-page')) {
 
     function filterAnimeList() {
         const searchText = searchBar.value.toLowerCase();
-        const genre = genreFilter.value;
-        const type = typeFilter.value.toLowerCase();
+        const selectedGenres = Array.from(document.querySelectorAll('input[name="genre"]:checked')).map(cb => cb.value);
+        const selectedTypes = Array.from(document.querySelectorAll('input[name="type"]:checked')).map(cb => cb.value);
 
         const filteredList = currentList.filter(anime =>
-            (genre === '' || anime.genre.includes(genre)) &&
-            (type === '' || anime.type.toLowerCase() === type) &&
+            (selectedGenres.length === 0 || anime.genre.some(genre => selectedGenres.includes(genre))) &&
+            (selectedTypes.length === 0 || selectedTypes.includes(anime.type)) &&
             (searchText === '' || anime.en.toLowerCase().includes(searchText) || anime.jp.toLowerCase().includes(searchText) || anime.romaji.toLowerCase().includes(searchText))
         );
 

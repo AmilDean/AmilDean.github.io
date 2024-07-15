@@ -536,18 +536,74 @@ body.dark-mode .search-bar::placeholder {
         top: 40%;
     }
 }
-
-.filter-dropdown {
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: #fff;
-    color: #000;
-    margin-right: 10px; /* Adjust as needed for spacing */
+.search-filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1080px;
+    margin: 20px auto;
 }
 
-.filter-dropdown:focus {
-    outline: none;
-    border-color: #277264;
+.search-container, .filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-container {
+    position: absolute;
+    top: 80px; /* Adjust as needed to be under the anime counter */
+    right: 20px; /* Adjust to your preference */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #002618; /* Background color to match your theme */
+    border-radius: 8px; /* Add border radius */
+    padding: 10px;
+    color: #D3D3D3; /* Ensure the text color is readable */
+}
+
+.filter-container h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #D3D3D3;
+    text-align: center; /* Center the text */
+}
+
+.filter-box {
+    display: flex;
+    flex-direction: row; /* Make the box horizontal */
+    gap: 10px;
+    background-color: #002618; /* Background color to match your theme */
+    border-radius: 8px; /* Add border radius */
+    padding: 10px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #D3D3D3; /* Ensure the text color is readable */
+}
+
+.filter-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #D3D3D3; /* Ensure the text color is readable */
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+.filter-group.genres {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Adjust to multiple columns */
+    grid-auto-rows: auto; /* Auto height for rows */
+    gap: 5px 20px; /* Adjust the gap between rows and columns */
+}
+
+.filter-divider {
+    border-left: 1px solid #D3D3D3; /* Vertical divider line */
+    height: auto;
+    margin: 0 10px; /* Adjust spacing as needed */
 }
