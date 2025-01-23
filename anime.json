@@ -8521,5 +8521,265 @@
          "Slice of Life"
       ],
       "type":"TV"
+   },
+   {
+      "en":"Delico’s Nursery",
+      "jp":"デリコの保育園",
+      "romaji":"Delico no Hoikuen",
+      "genre":[
+         "Fantasy",
+         "Drama"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Wistoria",
+      "jp":"ウィストリア",
+      "romaji":"Wistoria",
+      "genre":[
+         "Action",
+         "Adventure",
+         "Fantasy"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Murai no Koi",
+      "jp":"村井の恋",
+      "romaji":"Murai no Koi",
+      "genre":[
+         "Romance",
+         "Comedy",
+         "School"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Isekai Shikkaku",
+      "jp":"異世界失格",
+      "romaji":"Isekai Shikkaku",
+      "genre":[
+         "Isekai",
+         "Drama",
+         "Fantasy"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"I’ll Become a Villainess Who Goes Down in History",
+      "jp":"歴史に名を残す悪役令嬢になります",
+      "romaji":"Rekishi ni Na o Nokosu Akuyaku Reijou ni Narimasu",
+      "genre":[
+         "Fantasy",
+         "Romance",
+         "Drama"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"The Do-Over Damsel Conquers The Dragon Emperor",
+      "jp":"やり直し令嬢は竜帝を攻略中",
+      "romaji":"Yarinaoshi Reijou wa Ryūtei o Kōryakuchū",
+      "genre":[
+         "Fantasy",
+         "Romance",
+         "Adventure"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Nina the Starry Bride",
+      "jp":"星降る花嫁ニナ",
+      "romaji":"Hoshifuru Hanayome Nina",
+      "genre":[
+         "Fantasy",
+         "Romance"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Yakuza Fiancé",
+      "jp":"極道婚活",
+      "romaji":"Gokudou Konkatsu",
+      "genre":[
+         "Romance",
+         "Comedy",
+         "Action"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Hitoribocchi no Isekai Kouryaku",
+      "jp":"ひとりぼっちの異世界攻略",
+      "romaji":"Hitoribocchi no Isekai Kouryaku",
+      "genre":[
+         "Isekai",
+         "Fantasy",
+         "Adventure"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"A Terrified Teacher at Ghoul School",
+      "jp":"妖怪学校の先生はじめました！",
+      "romaji":"Youkai Gakkou no Sensei Hajimemashita!",
+      "genre":[
+         "Comedy",
+         "Supernatural"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Dandadan",
+      "jp":"ダンダダン",
+      "romaji":"Dandadan",
+      "genre":[
+         "Action",
+         "Supernatural",
+         "Comedy"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Blue Box",
+      "jp":"青の箱",
+      "romaji":"Ao no Hako",
+      "genre":[
+         "Romance",
+         "Drama",
+         "Sports"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Oomuro-ke: Dear Sisters",
+      "jp":"大室家: Dear Sisters",
+      "romaji":"Oomuro-ke: Dear Sisters",
+      "genre":[
+         "Slice of Life",
+         "Comedy"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Humanity Has Declined",
+      "jp":"人類は衰退しました",
+      "romaji":"Jinrui wa Suitai Shimashita",
+      "genre":[
+         "Fantasy",
+         "Comedy",
+         "Slice of Life"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Gugure! Kokkuri-san",
+      "jp":"繰繰れ！コックリさん",
+      "romaji":"Gugure! Kokkuri-san",
+      "genre":[
+         "Comedy",
+         "Supernatural"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"CHI.: On the Movements of the Earth",
+      "jp":"地球の運動について",
+      "romaji":"Chi.: Chikyuu no Undou ni Tsuite",
+      "genre":[
+         "Drama",
+         "Historical"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Uzumaki",
+      "jp":"うずまき",
+      "romaji":"Uzumaki",
+      "genre":[
+         "Horror",
+         "Supernatural"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"How I Attended an All-Guys Mixer",
+      "jp":"男子校で合コンした話",
+      "romaji":"Danshikou de Gokon Shita Hanashi",
+      "genre":[
+         "Comedy",
+         "Romance"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"A Story of a Girl That Was Unable to Become a Mage",
+      "jp":"魔法使いになれなかった少女の話",
+      "romaji":"Mahoutsukai ni Narenakatta Shoujo no Hanashi",
+      "genre":[
+         "Drama",
+         "Fantasy"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Kimi wa Meido-sama",
+      "jp":"君はメイド様",
+      "romaji":"Kimi wa Meido-sama",
+      "genre":[
+         "Comedy",
+         "Romance"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Zenshu",
+      "jp":"禅修",
+      "romaji":"Zenshu",
+      "genre":[
+         "Drama",
+         "Historical"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Sakamoto Days",
+      "jp":"サカモトデイズ",
+      "romaji":"Sakamoto Days",
+      "genre":[
+         "Action",
+         "Comedy"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Tasokare Hotel",
+      "jp":"黄昏ホテル",
+      "romaji":"Tasokare Hotel",
+      "genre":[
+         "Mystery",
+         "Drama"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Mythical Creatures Are My Dinners",
+      "jp":"幻獣は俺のディナー",
+      "romaji":"Genjuu wa Ore no Dinner",
+      "genre":[
+         "Fantasy",
+         "Comedy"
+      ],
+      "type":"TV"
+   },
+   {
+      "en":"Somali and the Forest Spirit",
+      "jp":"ソマリと森の神様",
+      "romaji":"Somali to Mori no Kamisama",
+      "genre":[
+         "Fantasy",
+         "Adventure"
+      ],
+      "type":"TV"
    }
 ]
