@@ -8781,5 +8781,215 @@
          "Adventure"
       ],
       "type":"TV"
-   }
+   },
+     {
+    "en": "Potemayo",
+    "jp": "ぽてまよ",
+    "romaji": "Potemayo",
+    "genre": ["Comedy","Slice of Life"],
+    "type": "TV"
+  },
+  {
+    "en": "Red Cat Ramen",
+    "jp": "ラーメン赤猫",
+    "romaji": "Rāmen Aka Neko",
+    "genre": ["Comedy","Slice of Life"],
+    "type": "TV"
+  },
+  {
+    "en": "The Beginning After the End",
+    "jp": "最強の王様、二度目の人生は何をする？",
+    "romaji": "Saikyō no Ōsama, Nidome no Jinsei wa Nani o Suru?",
+    "genre": ["Fantasy","Adventure"],
+    "type": "TV"
+  },
+  {
+    "en": "From Old Country Bumpkin to Master Swordsman",
+    "jp": "片田舎のおっさん、剣聖になる ～ただの田舎の剣術師範だったのに、大成した弟子たちが俺を放ってくれない件～",
+    "romaji": "Katainaka no Ossan, Kensei ni Naru: Tada no Inaka no Kenjutsu Shihan Datta noni…",
+    "genre": ["Fantasy","Action"],
+    "type": "TV"
+  },
+  {
+    "en": "Lazarus",
+    "jp": "ラザロ",
+    "romaji": "Razaro",
+    "genre": ["Sci‑Fi","Psychological"],
+    "type": "TV"
+  },
+  {
+    "en": "Kowloon Generic Romance",
+    "jp": "九龍ジェネリックロマンス",
+    "romaji": "Kūron Jenerikku Romansu",
+    "genre": ["Mystery","Romance"],
+    "type": "TV"
+  },
+  {
+    "en": "Zatsutabi -That’s Journey-",
+    "jp": "ざつ旅 -That’s Journey-",
+    "romaji": "Zatsutabi",
+    "genre": ["Adventure","Slice of Life"],
+    "type": "TV"
+  },
+  {
+    "en": "The Mononoke Lecture Logs of Chuzenji-sensei",
+    "jp": "中禅寺先生物怪講義録 先生が謎を解いてしまうから",
+    "romaji": "Chūzenji‑sensei Mononoke Kōgiroku",
+    "genre": ["Mystery","Supernatural"],
+    "type": "TV"
+  },
+  {
+    "en": "Witch Watch",
+    "jp": "ウィッチウォッチ",
+    "romaji": "Witch Watch",
+    "genre": ["Magic","Comedy"],
+    "type": "TV"
+  },
+  {
+    "en": "Uchuujin MuuMuu",
+    "jp": "宇宙人ムームー",
+    "romaji": "Uchūjin Mūmū",
+    "genre": ["Comedy","Sci‑Fi"],
+    "type": "TV"
+  },
+  {
+    "en": "Apocalypse Hotel",
+    "jp": "アポカリプスホテル",
+    "romaji": "Apokaripusu Hoteru",
+    "genre": ["Slice of Life","Sci‑Fi"],
+    "type": "TV"
+  },
+  {
+    "en": "Once Upon a Witch’s Death",
+    "jp": "いっぴんの魔女の死",
+    "romaji": "Ippin no Majo no Shi",
+    "genre": ["Fantasy","Drama"],
+    "type": "TV"
+  },
+  {
+    "en": "Food for the Soul",
+    "jp": "ソウルのためのごはん",
+    "romaji": "Sōru no Tame no Gohan",
+    "genre": ["Slice of Life","Comedy"],
+    "type": "TV"
+  },
+  {
+    "en": "Anne Shirley",
+    "jp": "アン・シャーリー",
+    "romaji": "An Shārī",
+    "genre": ["Drama","Slice of Life"],
+    "type": "TV"
+  },
+  {
+    "en": "Before Green Gables",
+    "jp": "グリーン・ゲイブルズの前に",
+    "romaji": "Burīngu Gēburuzu no Mae ni",
+    "genre": ["Drama","Slice of Life"],
+    "type": "TV"
+  },
+  {
+    "en": "Anne of Green Gables",
+    "jp": "赤毛のアン",
+    "romaji": "Akage no An",
+    "genre": ["Drama","Slice of Life"],
+    "type": "TV"
+  },
+  {
+    "en": "Campfire cooking in another world with my absurd skill",
+    "jp": "ありえへんスキルで異世界キャンプ飯",
+    "romaji": "Ariehen Skill de Isekai Camp Meshi",
+    "genre": ["Adventure","Fantasy"],
+    "type": "TV"
+  },
+  {
+    "en": "Dead Dead Demons Dededede Destruction",
+    "jp": "デッドデッドデーモンズデデデデデストラクション",
+    "romaji": "Deddo Deddo Dēmonzu Dededededestrokurushon",
+    "genre": ["Sci‑Fi","Drama"],
+    "type": "TV"
+  },
+  {
+    "en": "The Water Magician",
+    "jp": "水の魔術師",
+    "romaji": "Mizu no Majutsushi",
+    "genre": ["Fantasy","Magic"],
+    "type": "TV"
+  },
+  {
+    "en": "Milky Subway",
+    "jp": "ミルキーサブウェイ",
+    "romaji": "Mirukī Sabuwei",
+    "genre": ["Fantasy","Slice of Life"],
+    "type": "TV"
+  },
+  {
+    "en": "Welcome to the Outcast Restaurant",
+    "jp": "はぐれ者レストランへようこそ",
+    "romaji": "Haguremono Resutoran e Yōkoso",
+    "genre": ["Comedy","Slice of Life"],
+    "type": "TV"
+  },
+  {
+    "en": "The Fragrant Flower Blooms with Dignity",
+    "jp": "品位をもって香る花",
+    "romaji": "Hinni o Motte Kaoru Hana",
+    "genre": ["Romance","Drama"],
+    "type": "TV"
+  },
+  {
+    "en": "Ruri Rocks",
+    "jp": "ルリロックス",
+    "romaji": "Ruri Rokkusu",
+    "genre": ["Music","Slice of Life"],
+    "type": "TV"
+  },
+  {
+    "en": "City the Animation",
+    "jp": "シティザアニメーション",
+    "romaji": "Shiti za Animēshon",
+    "genre": ["Drama","Mystery"],
+    "type": "TV"
+  },
+  {
+    "en": "Hotel Inhumans",
+    "jp": "ホテル・インヒューマンズ",
+    "romaji": "Hoteru Inhyūmanzu",
+    "genre": ["Drama","Action"],
+    "type": "TV"
+  },
+  {
+    "en": "Uglymug, Epicfighter",
+    "jp": "アグリーマグ、エピックファイター",
+    "romaji": "Agurīmagu, Epikku Faitā",
+    "genre": ["Action","Comedy"],
+    "type": "TV"
+  },
+  {
+    "en": "The Summer Hikaru Died",
+    "jp": "光が死んだ夏",
+    "romaji": "Hikaru ga Shinda Natsu",
+    "genre": ["Drama","Mystery"],
+    "type": "TV"
+  },
+  {
+    "en": "Fermat no Ryouri",
+    "jp": "フェルマーの料理",
+    "romaji": "Ferumā no Ryōri",
+    "genre": ["Mystery","Slice of Life"],
+    "type": "TV"
+  },
+  {
+    "en": "Takopi’s Original Sin",
+    "jp": "タコピーの原罪",
+    "romaji": "Takopī no Genzai",
+    "genre": ["Drama","Supernatural"],
+    "type": "TV"
+  },
+  {
+    "en": "Summer Pockets",
+    "jp": "サマーポケッツ",
+    "romaji": "Samā Pokettsu",
+    "genre": ["Drama","Romance"],
+    "type": "TV"
+  }
 ]
