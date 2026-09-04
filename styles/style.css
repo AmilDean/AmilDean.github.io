@@ -612,3 +612,26 @@ body.dark-mode .search-bar::placeholder {
     height: auto;
     margin: 0 10px; /* Adjust spacing as needed */
 }
+
+
+/* Collapsible filter controls */
+.filter-toggle-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #277264;
+    color: #D3D3D3;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.filter-toggle-button:hover,
+.filter-toggle-button[aria-expanded="true"] {
+    background-color: #1f5b4e;
+}
+
+.filter-box[hidden] {
+    display: none;
+}

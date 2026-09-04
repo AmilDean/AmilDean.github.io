@@ -3,14 +3,132 @@
     "en": "Spy x Family",
     "jp": "スパイファミリー",
     "romaji": "Spy x Family",
-    "genre": ["Action", "Comedy", "Slice of Life"],
+    "genre": [
+      "Action",
+      "Comedy",
+      "Slice of Life"
+    ],
     "type": "Manga"
   },
   {
     "en": "Oshi no Ko",
     "jp": "【推しの子】",
     "romaji": "Oshi no Ko",
-    "genre": ["Drama", "Supernatural", "Idol"],
+    "genre": [
+      "Drama",
+      "Supernatural",
+      "Idol"
+    ],
+    "type": "Manga"
+  },
+  {
+    "en": "The Promised Neverland",
+    "jp": "約束のネバーランド",
+    "romaji": "Yakusoku no Neverland",
+    "genre": [
+      "Mystery",
+      "Psychological",
+      "Sci-Fi"
+    ],
+    "type": "Manga"
+  },
+  {
+    "en": "JoJo's Bizarre Adventure: Stone Ocean",
+    "jp": "ジョジョの奇妙な冒険 ストーンオーシャン",
+    "romaji": "JoJo no Kimyou na Bouken: Stone Ocean",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Supernatural"
+    ],
+    "type": "Manga"
+  },
+  {
+    "en": "Tokyo Revengers",
+    "jp": "東京卍リベンジャーズ",
+    "romaji": "Tokyo Revengers",
+    "genre": [
+      "Action",
+      "Drama",
+      "Supernatural"
+    ],
+    "type": "Manga"
+  },
+  {
+    "en": "Nan Hao & Shang Feng",
+    "jp": "南号尚风",
+    "romaji": "Nan Hao & Shang Feng",
+    "genre": [
+      "Comedy",
+      "School",
+      "Slice of Life"
+    ],
+    "type": "Manga"
+  },
+  {
+    "en": "Solo Leveling",
+    "jp": "俺だけレベルアップな件",
+    "romaji": "Ore dake Level Up na Ken",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "type": "Manga"
+  },
+  {
+    "en": "Made in Abyss",
+    "jp": "メイドインアビス",
+    "romaji": "Made in Abyss",
+    "genre": [
+      "Adventure",
+      "Drama",
+      "Fantasy"
+    ],
+    "type": "Manga"
+  },
+  {
+    "en": "Kindergarten WARS",
+    "jp": "幼稚園WARS",
+    "romaji": "Youchien Wars",
+    "genre": [
+      "Action",
+      "Comedy",
+      "Romance"
+    ],
+    "type": "Manga"
+  },
+  {
+    "en": "Komi Can't Communicate",
+    "jp": "古見さんは、コミュ症です。",
+    "romaji": "Komi-san wa, Komyushou desu.",
+    "genre": [
+      "Comedy",
+      "Romance",
+      "School"
+    ],
+    "type": "Manga"
+  },
+  {
+    "en": "Gantz",
+    "jp": "GANTZ",
+    "romaji": "Gantz",
+    "genre": [
+      "Action",
+      "Horror",
+      "Sci-Fi"
+    ],
+    "type": "Manga"
+  },
+  {
+    "en": "Chainsaw Man",
+    "jp": "チェンソーマン",
+    "romaji": "Chainsaw Man",
+    "genre": [
+      "Action",
+      "Horror",
+      "Supernatural"
+    ],
     "type": "Manga"
   }
 ]

@@ -15,16 +15,24 @@ document.addEventListener('DOMContentLoaded', applyDarkModeFromLocalStorage);
 
 if (document.body.classList.contains('anime-page')) {
     let watchedAnimeList = [];
-    let queueAnimeList = [];
+    let mangaList = [];
 
+    // Load anime first so a manga.json problem can never stop the anime page.
     fetch('anime.json')
         .then(response => response.json())
         .then(data => {
             watchedAnimeList = data;
-            queueAnimeList = [{en: "Red Cat Ramen", jp: "赤い猫のラーメン", romaji: "Ramen Aka Neko", genre: ["Comedy"], type: "TV"}];
             initializeAnimePage();
         })
         .catch(error => console.error('Error loading anime list:', error));
+
+    // Manga loads independently from anime.json.
+    fetch('manga.json')
+        .then(response => response.json())
+        .then(data => {
+            mangaList = data;
+        })
+        .catch(error => console.error('Error loading manga list:', error));
 
     function initializeAnimePage() {
         const container = document.querySelector('main');
@@ -32,18 +40,63 @@ if (document.body.classList.contains('anime-page')) {
 
         const searchBar = document.getElementById('searchBar');
         const watchedButton = document.getElementById('watchedButton');
-        const queueButton = document.getElementById('queueButton');
+        // Keep the existing HTML id so this works with your original anime.html.
+        const mangaButton = document.getElementById('queueButton') || document.getElementById('mangaButton');
         const langENButton = document.getElementById('langEN');
         const langJPButton = document.getElementById('langJP');
         const langROMButton = document.getElementById('langROM');
         const titleElement = document.querySelector('header h1');
+        const filterContainer = document.getElementById('filterContainer');
+        const filterToggleButton = document.getElementById('filterToggleButton');
+        const filterHeading = filterContainer ? filterContainer.querySelector('h2') : null;
+        const filterControl = filterToggleButton || filterHeading;
+        const filterBox = document.getElementById('filterOptions') || (filterContainer ? filterContainer.querySelector('.filter-box') : null);
 
         let currentList = watchedAnimeList;
+        let currentView = 'watched';
         let currentLang = 'EN';
+
+        // Turn the old Queue button into Manga without requiring a new HTML id.
+        if (mangaButton) {
+            mangaButton.textContent = 'Manga';
+        }
+
+        // Make either version of the Filter control clickable and start collapsed.
+        if (filterControl && filterBox) {
+            filterControl.style.cursor = 'pointer';
+            filterControl.style.userSelect = 'none';
+            filterControl.setAttribute('aria-expanded', 'false');
+
+            // The original version uses an h2; make it keyboard-accessible too.
+            if (!filterToggleButton) {
+                filterControl.setAttribute('role', 'button');
+                filterControl.setAttribute('tabindex', '0');
+            }
+
+            filterBox.hidden = true;
+            filterBox.style.display = 'none';
+
+            const toggleFilter = () => {
+                const isHidden = filterBox.hidden || filterBox.style.display === 'none';
+                filterBox.hidden = !isHidden;
+                filterBox.style.display = isHidden ? 'flex' : 'none';
+                filterControl.setAttribute('aria-expanded', String(isHidden));
+            };
+
+            filterControl.addEventListener('click', toggleFilter);
+            filterControl.addEventListener('keydown', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    toggleFilter();
+                }
+            });
+        }
 
         searchBar.addEventListener('input', filterAnimeList);
         watchedButton.addEventListener('click', () => switchList('watched'));
-        queueButton.addEventListener('click', () => switchList('queue'));
+        if (mangaButton) {
+            mangaButton.addEventListener('click', () => switchList('manga'));
+        }
         document.querySelectorAll('input[name="genre"], input[name="type"]').forEach(checkbox => {
             checkbox.addEventListener('change', filterAnimeList);
         });
@@ -52,17 +105,22 @@ if (document.body.classList.contains('anime-page')) {
         langROMButton.addEventListener('click', () => switchLanguage('ROM'));
 
         function switchList(list) {
+            currentView = list;
+
             if (list === 'watched') {
                 currentList = watchedAnimeList;
                 watchedButton.classList.add('active');
-                queueButton.classList.remove('active');
+                if (mangaButton) mangaButton.classList.remove('active');
                 titleElement.textContent = 'Watched Animes';
-            } else if (list === 'queue') {
-                currentList = queueAnimeList;
-                queueButton.classList.add('active');
+                searchBar.placeholder = 'Search anime...';
+            } else if (list === 'manga') {
+                currentList = mangaList;
+                if (mangaButton) mangaButton.classList.add('active');
                 watchedButton.classList.remove('active');
-                titleElement.textContent = 'Watchlist';
+                titleElement.textContent = 'Read Manga';
+                searchBar.placeholder = 'Search manga...';
             }
+
             updateTotalCounter();
             filterAnimeList();
         }
@@ -78,16 +136,16 @@ if (document.body.classList.contains('anime-page')) {
         function updateAnimeTitles() {
             const animeCards = document.querySelectorAll('.anime-card');
             animeCards.forEach(card => {
-                const titleElement = card.querySelector('h2');
-                const englishTitle = titleElement.getAttribute('data-en-title');
-                const japaneseTitle = titleElement.getAttribute('data-jp-title');
-                const romajiTitle = titleElement.getAttribute('data-romaji-title');
+                const cardTitle = card.querySelector('h2');
+                const englishTitle = cardTitle.getAttribute('data-en-title');
+                const japaneseTitle = cardTitle.getAttribute('data-jp-title');
+                const romajiTitle = cardTitle.getAttribute('data-romaji-title');
                 if (currentLang === 'EN') {
-                    titleElement.textContent = englishTitle;
+                    cardTitle.textContent = englishTitle;
                 } else if (currentLang === 'JP') {
-                    titleElement.textContent = japaneseTitle;
+                    cardTitle.textContent = japaneseTitle;
                 } else {
-                    titleElement.textContent = romajiTitle;
+                    cardTitle.textContent = romajiTitle;
                 }
             });
         }
@@ -130,11 +188,17 @@ if (document.body.classList.contains('anime-page')) {
             const selectedGenres = Array.from(document.querySelectorAll('input[name="genre"]:checked')).map(cb => cb.value);
             const selectedTypes = Array.from(document.querySelectorAll('input[name="type"]:checked')).map(cb => cb.value);
 
-            const filteredList = currentList.filter(anime =>
-                (selectedGenres.length === 0 || anime.genre.some(genre => selectedGenres.includes(genre))) &&
-                (selectedTypes.length === 0 || selectedTypes.includes(anime.type)) &&
-                (searchText === '' || anime.en.toLowerCase().includes(searchText) || anime.jp.toLowerCase().includes(searchText) || anime.romaji.toLowerCase().includes(searchText))
-            );
+            const filteredList = currentList.filter(item => {
+                const genreMatches = selectedGenres.length === 0 || item.genre.some(genre => selectedGenres.includes(genre));
+                // TV/Movie/ONA/OVA are anime filters. Don't let them hide manga entries.
+                const typeMatches = currentView === 'manga' || selectedTypes.length === 0 || selectedTypes.includes(item.type);
+                const searchMatches = searchText === '' ||
+                    item.en.toLowerCase().includes(searchText) ||
+                    item.jp.toLowerCase().includes(searchText) ||
+                    item.romaji.toLowerCase().includes(searchText);
+
+                return genreMatches && typeMatches && searchMatches;
+            });
 
             displayAnimeList(filteredList);
         }
@@ -151,15 +215,13 @@ if (document.body.classList.contains('anime-page')) {
         }
 
         function updateTotalCounter() {
-            if (currentList === watchedAnimeList) {
+            if (currentView === 'watched') {
                 counter.textContent = `Total Watched Anime: ${watchedAnimeList.length}`;
             } else {
-                counter.textContent = `Total Queued Anime: ${queueAnimeList.length}`;
+                counter.textContent = `Total Manga Read: ${mangaList.length}`;
             }
         }
 
-        // Initialize the total counter and the list display
-        updateTotalCounter();
         switchList('watched');
     }
 }
@@ -183,6 +245,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const bannerTitle = document.getElementById('bannerTitle');
     const bannerDescription = document.getElementById('bannerDescription');
     const bannerIndicator = document.getElementById('bannerIndicator');
+
+    // index.html and japanese.html use this same script but do not have a banner.
+    if (!bannerElement || !bannerTitle || !bannerDescription || !bannerIndicator) {
+        return;
+    }
 
     function updateBanner() {
         const { img, title, description } = banners[currentBanner];
