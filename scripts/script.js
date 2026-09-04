@@ -159,10 +159,26 @@ if (document.body.classList.contains('anime-page')) {
                 const animeImage = document.createElement('img');
                 const formattedAnime = formatTitle(anime.en);
 
-                const imageSrc = `images/${formattedAnime}.jpg`;
-                imageExists(imageSrc, function (exists) {
-                    animeImage.src = exists ? imageSrc : 'images/default.jpg';
-                });
+				const imageExtensions = ['jpg', 'jpeg', 'png'];
+
+				function tryImageExtension(index = 0) {
+					if (index >= imageExtensions.length) {
+						animeImage.src = 'images/default.jpg';
+						return;
+					}
+
+					const imageSrc = `images/${formattedAnime}.${imageExtensions[index]}`;
+
+					imageExists(imageSrc, function (exists) {
+						if (exists) {
+							animeImage.src = imageSrc;
+						} else {
+							tryImageExtension(index + 1);
+						}
+					});
+				}
+
+				tryImageExtension();
 
                 animeImage.alt = anime.en;
                 const animeTitle = document.createElement('h2');
